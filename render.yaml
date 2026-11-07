@@ -1,0 +1,35 @@
+# Render Blueprint: one free Node web service running `next start`.
+# Deploy: Render dashboard -> New -> Blueprint -> pick this repo. Render reads this file.
+#
+# Free web services sleep after ~15 minutes without traffic; the next visit wakes it up
+# (about 30-60 s). The market data ships with the repo in public/data/, so the build needs no
+# Python and no internet access to the data source.
+services:
+  - type: web
+    name: quantsynthica-pvp
+    runtime: node
+    plan: free
+    # --include=dev: the build needs Tailwind, TypeScript and ESLint, which are devDependencies.
+    buildCommand: npm ci --include=dev && npm run build
+    # `next start` listens on $PORT, which Render sets.
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # 1v1 rooms: the room server's host, e.g. quantsynthica-rooms.<you>.workers.dev (no https://).
+      # Read at build time, so set it before the first build; leave it empty to turn rooms off.
+      - key: NEXT_PUBLIC_ROOM_HOST
+        sync: false
+      # Google sign-in (README "Accounts"). Leave empty to keep progress in the browser only.
+      - key: NEXT_PUBLIC_FIREBASE_API_KEY
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_APP_ID
+        sync: false

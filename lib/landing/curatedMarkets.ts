@@ -1,0 +1,61 @@
+import type { Market } from './markets';
+
+/**
+ * Curated list shown on the landing page when /data/index.json cannot be loaded.
+ * Symbols and names only, never prices. When index.json loads, it replaces this list.
+ */
+export const CURATED_MARKETS: readonly Market[] = [
+  // Currency pairs
+  { symbol: 'EURUSD=X', name: 'EUR/USD', currency: 'USD' },
+  { symbol: 'JPY=X', name: 'USD/JPY', currency: 'JPY' },
+  { symbol: 'GBPUSD=X', name: 'GBP/USD', currency: 'USD' },
+  { symbol: 'AUDUSD=X', name: 'AUD/USD', currency: 'USD' },
+  { symbol: 'NZDUSD=X', name: 'NZD/USD', currency: 'USD' },
+  { symbol: 'EURJPY=X', name: 'EUR/JPY', currency: 'JPY' },
+  { symbol: 'GBPJPY=X', name: 'GBP/JPY', currency: 'JPY' },
+  { symbol: 'EURGBP=X', name: 'EUR/GBP', currency: 'GBP' },
+  { symbol: 'EURCAD=X', name: 'EUR/CAD', currency: 'CAD' },
+  { symbol: 'EURSEK=X', name: 'EUR/SEK', currency: 'SEK' },
+  { symbol: 'EURCHF=X', name: 'EUR/CHF', currency: 'CHF' },
+  { symbol: 'EURHUF=X', name: 'EUR/HUF', currency: 'HUF' },
+  { symbol: 'CNY=X', name: 'USD/CNY', currency: 'CNY' },
+  { symbol: 'HKD=X', name: 'USD/HKD', currency: 'HKD' },
+  { symbol: 'SGD=X', name: 'USD/SGD', currency: 'SGD' },
+  { symbol: 'INR=X', name: 'USD/INR', currency: 'INR' },
+  { symbol: 'MXN=X', name: 'USD/MXN', currency: 'MXN' },
+  { symbol: 'PHP=X', name: 'USD/PHP', currency: 'PHP' },
+  { symbol: 'IDR=X', name: 'USD/IDR', currency: 'IDR' },
+  { symbol: 'THB=X', name: 'USD/THB', currency: 'THB' },
+  { symbol: 'MYR=X', name: 'USD/MYR', currency: 'MYR' },
+  { symbol: 'ZAR=X', name: 'USD/ZAR', currency: 'ZAR' },
+  { symbol: 'RUB=X', name: 'USD/RUB', currency: 'RUB' },
+  // Indices
+  { symbol: '^GSPC', name: 'S&P 500', currency: 'USD' },
+  { symbol: '^DJI', name: 'Dow Jones Industrial Average', currency: 'USD' },
+  { symbol: '^IXIC', name: 'Nasdaq Composite', currency: 'USD' },
+  { symbol: 'NQ=F', name: 'Nasdaq 100 futures', currency: 'USD' },
+  { symbol: '^FTSE', name: 'FTSE 100', currency: 'GBP' },
+  { symbol: '^GDAXI', name: 'DAX', currency: 'EUR' },
+  { symbol: '^N225', name: 'Nikkei 225', currency: 'JPY' },
+  { symbol: '^HSI', name: 'Hang Seng Index', currency: 'HKD' },
+  { symbol: '^NSEI', name: 'Nifty 50', currency: 'INR' },
+  { symbol: '^NSEBANK', name: 'Nifty Bank', currency: 'INR' },
+  { symbol: '^BSESN', name: 'BSE Sensex', currency: 'INR' },
+  // Equities
+  { symbol: 'AAPL', name: 'Apple Inc.', currency: 'USD' },
+  { symbol: 'MSFT', name: 'Microsoft Corporation', currency: 'USD' },
+  { symbol: 'NVDA', name: 'NVIDIA Corporation', currency: 'USD' },
+  { symbol: 'AMZN', name: 'Amazon.com', currency: 'USD' },
+  { symbol: 'GOOGL', name: 'Alphabet Inc.', currency: 'USD' },
+  { symbol: 'TSLA', name: 'Tesla Inc.', currency: 'USD' },
+  { symbol: 'META', name: 'Meta Platforms', currency: 'USD' },
+  { symbol: 'RELIANCE.NS', name: 'Reliance Industries', currency: 'INR' },
+  { symbol: 'TCS.NS', name: 'Tata Consultancy Services', currency: 'INR' },
+  { symbol: 'INFY.NS', name: 'Infosys', currency: 'INR' },
+  { symbol: 'HDFCBANK.NS', name: 'HDFC Bank', currency: 'INR' },
+  { symbol: 'ICICIBANK.NS', name: 'ICICI Bank', currency: 'INR' },
+  { symbol: 'SBIN.NS', name: 'State Bank of India', currency: 'INR' },
+  { symbol: 'ITC.NS', name: 'ITC', currency: 'INR' },
+  { symbol: 'BHARTIARTL.NS', name: 'Bharti Airtel', currency: 'INR' },
+  { symbol: 'LT.NS', name: 'Larsen & Toubro', currency: 'INR' },
+];

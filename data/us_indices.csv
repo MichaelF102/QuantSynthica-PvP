@@ -1,0 +1,58 @@
+exchange,symbol,name,index_category,sector,industry,market_cap_segment,style,index_family
+S&P DJI,^GSPC,S&P 500,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,S&P Broad Market
+S&P DJI,^SP500TR,S&P 500 Total Return,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,S&P Broad Market
+S&P DJI,^OEX,S&P 100,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,S&P Broad Market
+S&P DJI,^MID,S&P MidCap 400,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,S&P Broad Market
+S&P DJI,^SP600,S&P SmallCap 600,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,S&P Broad Market
+S&P DJI,^GSPE,S&P 500 Energy,Sectoral,Energy,Energy,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-15,S&P 500 Materials,Sectoral,Materials,Materials,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-20,S&P 500 Industrials,Sectoral,Industrials,Industrials,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-25,S&P 500 Consumer Discretionary,Sectoral,Consumer,Consumer Discretionary,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-30,S&P 500 Consumer Staples,Sectoral,Consumer,Consumer Staples,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-35,S&P 500 Health Care,Sectoral,Healthcare,Healthcare / Pharmaceuticals,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-40,S&P 500 Financials,Sectoral,Financial Services,Financial Services,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-45,S&P 500 Information Technology,Sectoral,Information Technology,Information Technology,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-50,S&P 500 Communication Services,Sectoral,Telecommunication,Communication Services,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-55,S&P 500 Utilities,Sectoral,Utilities,Utilities,Large Cap,Core,S&P Sectoral
+S&P DJI,^SP500-60,S&P 500 Real Estate,Sectoral,Real Estate,Real Estate,Large Cap,Core,S&P Sectoral
+S&P DJI,^DJI,Dow Jones Industrial Average,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,Dow Jones Broad Market
+S&P DJI,^DJA,Dow Jones Composite Average,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,Dow Jones Broad Market
+S&P DJI,^DJT,Dow Jones Transportation Average,Sectoral,Transportation & Logistics,Transportation & Logistics,All Cap / Broad,Core,Dow Jones Sectoral
+S&P DJI,^DJU,Dow Jones Utility Average,Sectoral,Utilities,Utilities,All Cap / Broad,Core,Dow Jones Sectoral
+NASDAQ,^IXIC,NASDAQ Composite,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NASDAQ Broad Market
+NASDAQ,^NDX,NASDAQ 100,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,NASDAQ Broad Market
+NASDAQ,^NBI,NASDAQ Biotechnology,Sectoral,Healthcare,Biotechnology,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^BANK,NASDAQ Bank,Sectoral,Banking,Banks,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^IXF,NASDAQ Financial 100,Sectoral,Financial Services,Financial Services,Large Cap,Core,NASDAQ Sectoral
+NASDAQ,^INDS,NASDAQ Industrial,Sectoral,Industrials,Industrials,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^INSR,NASDAQ Insurance,Sectoral,Financial Services,Insurance,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^IXCO,NASDAQ Computer,Sectoral,Information Technology,Information Technology,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^TRAN,NASDAQ Transportation,Sectoral,Transportation & Logistics,Transportation & Logistics,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^SOX,PHLX Semiconductor,Sectoral,Information Technology,Semiconductors,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^XAU,PHLX Gold/Silver Sector,Sectoral,Metals,Gold & Silver Mining,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^OSX,PHLX Oil Service Sector,Sectoral,Energy,Oil & Gas Services,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^UTY,PHLX Utility Sector,Sectoral,Utilities,Utilities,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^HGX,PHLX Housing Sector,Sectoral,Real Estate,Housing,All Cap / Broad,Core,NASDAQ Sectoral
+NASDAQ,^BKX,KBW Nasdaq Bank,Sectoral,Banking,Banks,All Cap / Broad,Core,KBW Sectoral
+NASDAQ,^KRX,KBW Nasdaq Regional Banking,Sectoral,Banking,Regional Banks,Small Cap,Core,KBW Sectoral
+NYSE,^NYA,NYSE Composite,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NYSE Broad Market
+NYSE,^NY,NYSE US 100,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,NYSE Broad Market
+NYSE,^NYY,NYSE International 100,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,NYSE Broad Market
+NYSE,^XAX,NYSE American Composite,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,NYSE Broad Market
+NYSE,^XOI,NYSE Arca Oil,Sectoral,Energy,Oil & Gas,All Cap / Broad,Core,NYSE Sectoral
+NYSE,^HUI,NYSE Arca Gold BUGS,Sectoral,Metals,Gold Mining,All Cap / Broad,Core,NYSE Sectoral
+NYSE,^DRG,NYSE Arca Pharmaceutical,Sectoral,Healthcare,Healthcare / Pharmaceuticals,All Cap / Broad,Core,NYSE Sectoral
+Wilshire,^W5000,Wilshire 5000 Total Market,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,Wilshire Broad Market
+FTSE Russell,^RUI,Russell 1000,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,Russell Broad Market
+FTSE Russell,^RUT,Russell 2000,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,Russell Broad Market
+FTSE Russell,^RUA,Russell 3000,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,Russell Broad Market
+FTSE Russell,^RUMIC,Russell Midcap,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,Russell Broad Market
+FTSE Russell,^RLG,Russell 1000 Growth,Strategy / Factor,Diversified / Broad Market,Broad Market,Large Cap,Growth,Russell Strategy / Factor
+FTSE Russell,^RLV,Russell 1000 Value,Strategy / Factor,Diversified / Broad Market,Broad Market,Large Cap,Value,Russell Strategy / Factor
+FTSE Russell,^RUO,Russell 2000 Growth,Strategy / Factor,Diversified / Broad Market,Broad Market,Small Cap,Growth,Russell Strategy / Factor
+FTSE Russell,^RUJ,Russell 2000 Value,Strategy / Factor,Diversified / Broad Market,Broad Market,Small Cap,Value,Russell Strategy / Factor
+CBOE,^VIX,CBOE Volatility Index (VIX),Volatility,Diversified / Broad Market,Broad Market,Large Cap,Volatility,CBOE Volatility
+CBOE,^VXN,CBOE NASDAQ 100 Volatility,Volatility,Diversified / Broad Market,Broad Market,Large Cap,Volatility,CBOE Volatility
+CBOE,^VXD,CBOE DJIA Volatility,Volatility,Diversified / Broad Market,Broad Market,Large Cap,Volatility,CBOE Volatility
+CBOE,^VVIX,CBOE VIX of VIX,Volatility,Diversified / Broad Market,Broad Market,Large Cap,Volatility,CBOE Volatility
+CBOE,^SKEW,CBOE SKEW Index,Volatility,Diversified / Broad Market,Broad Market,Large Cap,Volatility,CBOE Volatility

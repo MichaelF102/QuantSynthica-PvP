@@ -1,0 +1,42 @@
+rules_version = '2';
+
+// Plan M14 A3: a signed-in user can read and write only their own documents. The web config in
+// NEXT_PUBLIC_FIREBASE_* is public by design; these rules are what protect the data.
+// Paste into Firebase console -> Firestore -> Rules, or deploy with the Firebase CLI.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function optionalString(data, key, max) {
+      return !(key in data) || (data[key] is string && data[key].size() <= max);
+    }
+
+    // Profile: nickname, last setup, Google name and photo. No email.
+    match /users/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['nickname', 'lastSetup', 'displayName', 'photoURL', 'updatedAt'])
+        && optionalString(request.resource.data, 'nickname', 20)
+        && optionalString(request.resource.data, 'lastSetup', 4000)
+        && optionalString(request.resource.data, 'displayName', 100)
+        && optionalString(request.resource.data, 'photoURL', 1000)
+        && (!('updatedAt' in request.resource.data) || request.resource.data.updatedAt is number);
+
+      // One saved practice result or 1v1 result, kept as JSON in `data`.
+      match /{kind}/{id} {
+        allow read, delete: if isOwner(uid) && kind in ['results', 'duels'];
+        allow create, update: if isOwner(uid)
+          && kind in ['results', 'duels']
+          && id.matches('^[A-Za-z0-9_-]{1,150}$')
+          && request.resource.data.keys().hasOnly(['id', 'playedAt', 'v', 'data'])
+          && request.resource.data.id == id
+          && request.resource.data.playedAt is number
+          && request.resource.data.v == 1
+          && request.resource.data.data is string
+          && request.resource.data.data.size() <= 500000;
+      }
+    }
+  }
+}

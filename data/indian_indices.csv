@@ -1,0 +1,163 @@
+exchange,symbol,name,index_category,sector,industry,market_cap_segment,style,index_family
+BSE,200EQW.BO,BSE 200 Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Strategy / Factor
+BSE,BSE-AUTO.BO,BSE Auto,Sectoral,Automobile,Automobile,All Cap / Broad,Core,BSE Sectoral
+BSE,BSE-BANK.BO,BSE Bankex,Sectoral,Banking,Banks,All Cap / Broad,Core,BSE Sectoral
+BSE,BBGEFS.BO,BSE Select Business Groups,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,BHRT22.BO,BSE Bharat 22,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,BS1000.BO,BSE 1000,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,BSE-100.BO,BSE 100,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Broad Market
+BSE,BSE-200.BO,BSE 200,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Broad Market
+BSE,BSE-500.BO,BSE 500,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Broad Market
+BSE,BSEDSI.BO,BSE Dividend Stability,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Strategy / Factor
+BSE,BSELVI.BO,BSE Low Volatility,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Low Volatility,BSE Strategy / Factor
+BSE,BSEMOI.BO,BSE Momentum,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Momentum,BSE Strategy / Factor
+BSE,BSEPBI.BO,BSE Private Banks,Sectoral,Banking,Private Banks,All Cap / Broad,Core,BSE Sectoral
+BSE,BSEQUI.BO,BSE Quality,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Quality,BSE Strategy / Factor
+BSE,BSE-TECK.BO,BSE TECK,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,BSEEVI.BO,BSE Enhanced Value,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Value,BSE Strategy / Factor
+BSE,BSE-CD.BO,BSE Consumer Durables,Sectoral,Consumer Durables,Consumer Durables,All Cap / Broad,Core,BSE Sectoral
+BSE,BSE-CG.BO,BSE Capital Goods,Sectoral,Capital Goods,Capital Goods,All Cap / Broad,Core,BSE Sectoral
+BSE,COMDTY.BO,BSE Commodities,Thematic,Commodities,Commodities,All Cap / Broad,Core,BSE Thematic
+BSE,CONDIS.BO,BSE Consumer Discretionary,Sectoral,Consumer,Consumer,All Cap / Broad,Core,BSE Sectoral
+BSE,CPSE.BO,BSE CPSE,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,DFRGRI.BO,BSE Diversified Financials Revenue Growth,Sectoral,Financial Services,Financial Services,All Cap / Broad,Growth,BSE Sectoral
+BSE,DOLLEX100.BO,BSE Dollex 100,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Broad Market
+BSE,DOLLEX200.BO,BSE Dollex 200,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Broad Market
+BSE,DOLLEX30.BO,BSE Dollex 30,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,ENERGY.BO,BSE Energy,Sectoral,Energy,Energy,All Cap / Broad,Core,BSE Sectoral
+BSE,ESG100.BO,BSE 100 ESG,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,BSE Strategy / Factor
+BSE,FINSER.BO,BSE Financial Services,Sectoral,Financial Services,Financial Services,All Cap / Broad,Core,BSE Sectoral
+BSE,BSE-FMCG.BO,BSE Fast Moving Consumer Goods,Sectoral,FMCG,FMCG,All Cap / Broad,Core,BSE Sectoral
+BSE,FOCIT.BO,BSE Focused IT,Sectoral,Information Technology,Information Technology,All Cap / Broad,Core,BSE Sectoral
+BSE,FOCMID.BO,BSE Focused MidCap,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,BSE Broad Market
+BSE,BSE-HC.BO,BSE Health Care,Sectoral,Healthcare,Healthcare / Pharmaceuticals,All Cap / Broad,Core,BSE Sectoral
+BSE,IND150.BO,BSE India 150,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,INDSTR.BO,BSE Industrials,Sectoral,Industrials,Industrials,All Cap / Broad,Core,BSE Sectoral
+BSE,INSLDR.BO,BSE India Sector Leaders,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,INTECO.BO,BSE Internet Economy,Sectoral,Internet / Digital,Internet / Digital,All Cap / Broad,Core,BSE Sectoral
+BSE,BSE-IPO.BO,BSE IPO,Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Thematic
+BSE,BSE-IT.BO,BSE Information Technology,Sectoral,Information Technology,Information Technology,All Cap / Broad,Core,BSE Sectoral
+BSE,LCTMCI.BO,BSE 100 LargeCap TMC,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,BSE Broad Market
+BSE,LMI250.BO,BSE 250 LargeCap,Broad Market,Diversified / Broad Market,Broad Market,Large Cap,Core,BSE Broad Market
+BSE,METAL.BO,BSE Metal,Sectoral,Metals,Metals,All Cap / Broad,Core,BSE Sectoral
+BSE,MFG.BO,BSE India Manufacturing,Thematic,Manufacturing,Manufacturing,All Cap / Broad,Core,BSE Thematic
+BSE,MID150.BO,BSE 150 MidCap,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,BSE Broad Market
+BSE,MIDSEL.BO,BSE MidCap Select,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,BSE Broad Market
+BSE,MOME50.BO,BSE 500 Momentum 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Momentum,BSE Strategy / Factor
+BSE,MSL400.BO,BSE 400 MidSmallCap,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,BSE Broad Market
+BSE,POWENE.BO,BSE Power & Energy,Sectoral,Energy,Power,All Cap / Broad,Core,BSE Sectoral
+BSE,BSE-POWER.BO,BSE Power,Sectoral,Energy,Power,All Cap / Broad,Core,BSE Sectoral
+BSE,PRECON.BO,BSE Premium Consumption,Thematic,Consumer,Premium Consumption,All Cap / Broad,Core,BSE Thematic
+BSE,BSE-PSU.BO,BSE Public Sector,Sectoral,Public Sector,Public Sector,All Cap / Broad,Core,BSE Sectoral
+BSE,PSUBNK.BO,BSE PSU Bank,Sectoral,Banking,Public Sector Banks,All Cap / Broad,Core,BSE Sectoral
+BSE,QUAL50.BO,BSE 500 Quality 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Quality,BSE Strategy / Factor
+BSE,BSE-REALTY.BO,BSE Realty,Sectoral,Real Estate,Real Estate,All Cap / Broad,Core,BSE Sectoral
+BSE,SELIPO.BO,BSE Select IPO,Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Thematic
+BSE,SENEQW.BO,BSE Sensex Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Strategy / Factor
+BSE,SMLSEL.BO,BSE SmallCap Select,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,BSE Broad Market
+BSE,SML250.BO,BSE 250 SmallCap,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,BSE Broad Market
+BSE,SNSX50.BO,BSE Sensex 50,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,SNSX60.BO,BSE Sensex 60,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,SNXN30.BO,BSE Sensex Next 30,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,SNXT50.BO,BSE Sensex Next 50,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,SS635.BO,BSE Sensex 60 65:35,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,BSE-TECK.BO,BSE TECK,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,BSE Broad Market
+BSE,TELCOM.BO,BSE Telecommunication,Sectoral,Telecommunication,Telecommunication,All Cap / Broad,Core,BSE Sectoral
+BSE,UTILS.BO,BSE Utilities,Sectoral,Utilities,Utilities,All Cap / Broad,Core,BSE Sectoral
+NSE,^NSEBANK,Nifty Bank,Sectoral,Banking,Banking,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNX100,Nifty 100,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,^CNX200,Nifty 200,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,^CRSLDX,Nifty 500,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,^CNXAUTO,Nifty Auto,Sectoral,Automobile,Automobile,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXCMDT,Nifty Commodities,Thematic,Commodities,Commodities,All Cap / Broad,Core,NSE Thematic
+NSE,^CNXCONSUM,Nifty India Consumption,Thematic,Consumer,Consumer,All Cap / Broad,Core,NSE Thematic
+NSE,^CNXDIVIDOPPT,Nifty Dividend Opportunities 50,Strategy / Factor,Financial Services,Financial Services,Broad Market,Core,NSE Strategy / Factor
+NSE,^CNXENERGY,Nifty Energy,Sectoral,Energy,Energy,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_FIN_SERVICE.NS,Nifty Financial Services,Sectoral,Financial Services,Financial Services,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXFMCG,Nifty FMCG,Sectoral,FMCG,FMCG,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXINFRA,Nifty Infrastructure,Thematic,Infrastructure,Infrastructure,All Cap / Broad,Core,NSE Thematic
+NSE,^CNXIT,Nifty IT,Sectoral,Information Technology,Information Technology,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXMEDIA,Nifty Media,Sectoral,Media,Media,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXMETAL,Nifty Metal,Sectoral,Metals,Metals,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_MIDCAP_100.NS,Nifty MidCap 100,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Broad Market
+NSE,^CNXMNC,Nifty MNC,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Broad Market
+NSE,^CNXPHARMA,Nifty Pharma,Sectoral,Healthcare,Healthcare / Pharmaceuticals,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXPSE,Nifty PSE,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Broad Market
+NSE,^CNXPSUBANK,Nifty PSU Bank,Sectoral,Banking,Public Sector Banks,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXREALTY,Nifty Realty,Sectoral,Real Estate,Real Estate,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXSERVICE,Nifty Services Sector,Sectoral,Services,Services,All Cap / Broad,Core,NSE Sectoral
+NSE,^CNXSMALLCAP,Nifty SmallCap 100,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,NSE Broad Market
+NSE,NIFTY_CPSE,Nifty CPSE,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Broad Market
+NSE,LIX15.NS,Nifty 100 Liquid 15,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NI15.NS,Nifty Growth Sectors 15,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Growth,NSE Broad Market
+NSE,^NSEI,Nifty 50,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,NIFTY100EQUALWEIGHT.NS,Nifty 100 Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTY100LOWVOL30.NS,Nifty 100 Low Volatility 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Low Volatility,NSE Strategy / Factor
+NSE,NIFTY100_ALPHA_30.NS,Nifty 100 Alpha 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTY200MOMENTM30.NS,Nifty 200 Momentum 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Momentum,NSE Strategy / Factor
+NSE,NIFTY200QUALITY30.NS,Nifty 200 Quality 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Quality,NSE Strategy / Factor
+NSE,NIFTY200_ALPHA_30.NS,Nifty 200 Alpha 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTY200_VALUE_30.NS,Nifty 200 Value 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Value,NSE Strategy / Factor
+NSE,NIFTY500MOMENTM50.NS,Nifty 500 Momentum 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Momentum,NSE Strategy / Factor
+NSE,NIFTY500_EW.NS,Nifty 500 Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTY500_LMS_EQ.NS,Nifty 500 LargeMidSmall Equal-Cap,Strategy / Factor,Diversified / Broad Market,Broad Market,Large & Mid Cap,Core,NSE Strategy / Factor
+NSE,NIFTY500_LOWVOL50.NS,Nifty 500 Low Volatility 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Low Volatility,NSE Strategy / Factor
+NSE,NIFTY500_MQVL50.NS,Nifty 500 Multifactor MQVL 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTY500_MULTICAP.NS,Nifty 500 Multicap 50:25:25,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,NIFTY500_QUALITY_50.NS,Nifty 500 Quality 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Quality,NSE Strategy / Factor
+NSE,NIFTY500_VALUE_50.NS,Nifty 500 Value 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Value,NSE Strategy / Factor
+NSE,NIFTY50EQUALWEIGHT.NS,Nifty 50 Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,^NV20,Nifty 50 Value 20,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Value,NSE Strategy / Factor
+NSE,NIFTYALPHA50.NS,Nifty Alpha 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Strategy / Factor
+NSE,NIFTYALPHALOWVOL.NS,Nifty Alpha Low Volatility 30,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Low Volatility,NSE Strategy / Factor
+NSE,NIFTYFINSERV25_50.NS,Nifty Financial Services 25/50,Sectoral,Financial Services,Financial Services,Broad Market,Core,NSE Sectoral
+NSE,^NSMIDCP,Nifty Next 50,Broad Market,Diversified / Broad Market,Broad Market,Broad Market,Core,NSE Broad Market
+NSE,NIFTYM150MOMNTM50.NS,Nifty MidCap 150 Momentum 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Mid Cap,Momentum,NSE Strategy / Factor
+NSE,NIFTYMIDCAP150.NS,Nifty MidCap 150,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Broad Market
+NSE,^NSEMDCP50,Nifty MidCap 50,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Broad Market
+NSE,NIFTYMIDLIQ15.NS,Nifty MidCap Liquid 15,Strategy / Factor,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Strategy / Factor
+NSE,NIFTYMS400_MQ_100.NS,Nifty MidSmallcap 400 Momentum Quality 100,Strategy / Factor,Diversified / Broad Market,Broad Market,Small Cap,Quality/Momentum,NSE Strategy / Factor
+NSE,NIFTYPVTBANK.NS,Nifty Private Bank,Sectoral,Banking,Private Banks,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTYQUALITY30.NS,Nifty 100 Quality 30,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Quality,NSE Strategy / Factor
+NSE,NIFTYSML250MQ_100.NS,Nifty Smallcap 250 Momentum Quality 100,Strategy / Factor,Diversified / Broad Market,Broad Market,Small Cap,Quality/Momentum,NSE Strategy / Factor
+NSE,NIFTYSMLCAP250.NS,Nifty SmallCap 250,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,NSE Broad Market
+NSE,NIFTYSMLCAP50.NS,Nifty SmallCap 50,Broad Market,Diversified / Broad Market,Broad Market,Small Cap,Core,NSE Broad Market
+NSE,NIFTY_AQLV_30.NS,Nifty Alpha Quality Value Low-Volatility 30,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Value/Quality/Low Volatility,NSE Strategy / Factor
+NSE,NIFTY_AQL_30.NS,Nifty Alpha Quality Low-Volatility 30,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Quality/Low Volatility,NSE Strategy / Factor
+NSE,NIFTY_CAPITAL_MKT.NS,Nifty Capital Markets,Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_CONSR_DURBL.NS,Nifty Consumer Durables,Sectoral,Consumer Durables,Consumer Durables,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_COREHOUSING.NS,Nifty Core Housing,Thematic,Real Estate,Real Estate,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_CORP_MAATR.NS,Nifty India Select 5 Corporate Groups (MAATR),Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_EV.NS,Nifty EV & New Age Automotive,Sectoral,Automobile,Automobile,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_FINSEREXBNK.NS,Nifty Financial Services Ex-Bank,Sectoral,Financial Services,Financial Services,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_HEALTHCARE.NS,Nifty Healthcare,Sectoral,Healthcare,Healthcare / Pharmaceuticals,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_HIGHBETA_50.NS,Nifty High Beta 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,High Beta,NSE Strategy / Factor
+NSE,NIFTY_HOUSING.NS,Nifty Housing,Thematic,Real Estate,Real Estate,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_INDIA_MFG.NS,Nifty India Manufacturing,Thematic,Manufacturing,Manufacturing,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_IND_DEFENCE.NS,Nifty India Defence,Thematic,Defence,Defence,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_IND_DIGITAL.NS,Nifty India Digital,Thematic,Internet / Digital,Internet / Digital,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_IND_TOURISM.NS,Nifty India Tourism,Thematic,Tourism,Tourism,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_IPO.NS,Nifty IPO,Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_LARGEMID250.NS,Nifty LargeMidCap 250,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Broad Market
+NSE,NIFTY_LOW_VOL_50.NS,Nifty Low Volatility 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Low Volatility,NSE Strategy / Factor
+NSE,NIFTY_MICROCAP250.NS,Nifty Microcap 250,Broad Market,Diversified / Broad Market,Broad Market,Micro Cap,Core,NSE Broad Market
+NSE,NIFTY_MIDSML_HLTH.NS,Nifty MidSmall Healthcare,Sectoral,Healthcare,Healthcare / Pharmaceuticals,Mid & Small Cap,Core,NSE Sectoral
+NSE,NIFTY_MID_SELECT.NS,Nifty MidCap Select,Broad Market,Diversified / Broad Market,Broad Market,Mid Cap,Core,NSE Broad Market
+NSE,NIFTY_MOBILITY.NS,Nifty Mobility,Thematic,Automobile,Automobile,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_MS_FIN_SERV.NS,Nifty MidSmall Financial Services,Sectoral,Financial Services,Financial Services,Mid & Small Cap,Core,NSE Sectoral
+NSE,NIFTY_MS_IND_CONS.NS,Nifty MidSmall India Consumption,Thematic,Consumer,Consumer,Mid & Small Cap,Core,NSE Thematic
+NSE,NIFTY_MS_IT_TELCM.NS,Nifty MidSmall IT & Telecom,Sectoral,Information Technology,Information Technology,Mid & Small Cap,Core,NSE Sectoral
+NSE,NIFTY_MULTI_INFRA.NS,Nifty 500 Multicap Infrastructure 50:30:20,Thematic,Infrastructure,Infrastructure,Broad Market,Core,NSE Thematic
+NSE,NIFTY_MULTI_MFG.NS,Nifty 500 Multicap India Manufacturing 50:30:20,Thematic,Manufacturing,Manufacturing,Broad Market,Core,NSE Thematic
+NSE,NIFTY_MULTI_MQ_50.NS,Nifty 500 Multicap Momentum Quality 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Broad Market,Quality/Momentum,NSE Strategy / Factor
+NSE,NIFTY_NEW_CONSUMP.NS,Nifty India New Age Consumption,Thematic,Consumer,New Age Consumer,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_NONYC_CONS.NS,Nifty Non-Cyclical Consumer,Sectoral,Consumer,Consumer Staples,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_OIL_AND_GAS.NS,Nifty Oil and Gas,Sectoral,Energy,Oil & Gas,All Cap / Broad,Core,NSE Sectoral
+NSE,NIFTY_QLTY_LV_30.NS,Nifty Quality Low-Volatility 30,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Quality/Low Volatility,NSE Strategy / Factor
+NSE,NIFTY_RURAL.NS,Nifty Rural,Thematic,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Thematic
+NSE,NIFTY_SML250_Q50.NS,Nifty Smallcap 250 Quality 50,Strategy / Factor,Diversified / Broad Market,Broad Market,Small Cap,Quality,NSE Strategy / Factor
+NSE,NIFTY_TATA_25_CAP.NS,Nifty Tata Group 25% Cap,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Broad Market
+NSE,NIFTY_TOP_10_EW.NS,Nifty Top 10 Equal Weight Index,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Strategy / Factor
+NSE,NIFTY_TOP_15_EW.NS,Nifty Top 15 Equal Weight,Strategy / Factor,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Strategy / Factor
+NSE,NIFTY_TOTAL_MKT.NS,Nifty Total Market,Broad Market,Diversified / Broad Market,Broad Market,All Cap / Broad,Core,NSE Broad Market
+NSE,NIFTY_TRANS_LOGIS.NS,Nifty Transportation & Logistics,Sectoral,Transportation & Logistics,Transportation & Logistics,All Cap / Broad,Core,NSE Sectoral

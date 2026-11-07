@@ -1,0 +1,22 @@
+# Room server for 1v1 matches (plan/M11-multiplayer.md). One Durable Object per room.
+# Local:  npm run dev (starts it with the app) or npm run rooms:dev
+# Deploy: npm run rooms:deploy (Cloudflare Workers free plan)
+name = "quantsynthica-rooms"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+[[durable_objects.bindings]]
+name = "Room"
+class_name = "Room"
+
+# SQLite-backed Durable Objects are available on the Workers free plan.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
+
+[vars]
+# Where the room server reads /data/<SYMBOL>.csv and /data/index.json. Set to the deployed app's
+# URL in production (wrangler.toml [env] or the Cloudflare dashboard).
+DATA_ORIGIN = "http://localhost:3000"
+# Comma-separated origins allowed to open a room socket.
+ALLOWED_ORIGINS = "http://localhost:3000,http://127.0.0.1:3000"

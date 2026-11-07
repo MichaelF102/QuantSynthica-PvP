@@ -1,0 +1,30 @@
+node_modules/
+.next/
+out/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+.DS_Store
+# python
+__pycache__/
+.venv/
+*.pyc
+.pytest_cache/
+# data pipeline temp files
+public/data/*.tmp
+# deploy tooling
+.vercel
+.wrangler
+room-server/.wrangler
+# firebase tooling
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+# internal working docs, not part of the app
+plan/
+CLAUDE.md
+DESIGN.md
+# reference screenshots of a third-party product: never publish
+sc/
