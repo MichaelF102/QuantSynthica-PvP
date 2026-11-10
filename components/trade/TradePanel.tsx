@@ -13,6 +13,7 @@ import { useMatchStore } from '@/store/matchStore';
 import { BracketEditor } from './BracketEditor';
 import { NO_LEVELS, OrderLevels, levelsFrom, type LevelsInput } from './OrderLevels';
 import { QueuedOrderNote } from './QueuedOrderNote';
+import { TicketPublisher } from './TicketPublisher';
 
 const QUICK = [10, 25, 50, 100] as const;
 const MODES = [
@@ -65,6 +66,10 @@ export function TradePanelView({ match, info, onBuy: buy, onSell: sell, onClose:
   useEffect(() => {
     const onIntent = (e: Event) => {
       const detail = (e as CustomEvent<TradeIntentDetail>).detail;
+      if ('place' in detail) {
+        latest.current.send(detail.place);
+        return;
+      }
       if ('intent' in detail) {
         setIntent(detail.intent);
         inputRef.current?.focus();
@@ -125,6 +130,15 @@ export function TradePanelView({ match, info, onBuy: buy, onSell: sell, onClose:
       icon={ArrowLeftRight}
       info={`${nextOpen ? 'Orders wait for the next candle and fill at its open.' : 'Orders fill at the close of the latest revealed candle.'} No leverage: a position plus fees cannot be worth more than your balance.`}
     >
+      <TicketPublisher
+        size={preview.units > 0 ? `${mode === 'percent' && Number.isFinite(value) ? `${value}% · ` : ''}${fmtUnits(preview.units, lotStep)} ${shortSymbol(info.symbol)}` : '—'}
+        buyBlocked={Boolean(preview.buyError) || levelsBlocked}
+        sellBlocked={Boolean(preview.sellError) || levelsBlocked}
+        reason={same ? buyWhy : levelsBlocked ? 'Fix the stop / target levels first.' : null}
+        sending={sending}
+        live={live}
+        pnl={position && pnl !== null ? { text: fmtSignedMoney(pnl, currency), tone: pnl > 0 ? 'up' : pnl < 0 ? 'down' : 'flat', side: position.units > 0 ? 'Long' : 'Short' } : null}
+      />
       <div className="space-y-3">
         <Segmented<SizeMode> label="Size mode" options={MODES} value={mode} onChange={switchMode} className="w-full [&>button]:flex-1" />
 

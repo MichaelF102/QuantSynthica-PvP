@@ -25,7 +25,7 @@ export function Segmented<T extends string | number>({ options, value, onChange,
             disabled={disabled}
             onClick={() => onChange(opt.value)}
             className={cn(
-              'px-2.5 py-1 rounded text-[11px] font-mono transition-colors duration-150',
+              'px-2.5 py-1 rounded text-[11px] font-mono transition-colors duration-150 touch:min-h-9',
               'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500/70 disabled:opacity-50',
               selected ? 'bg-blue-600 text-white shadow-sm font-semibold' : 'font-medium text-slate-400 hover:text-white',
             )}

@@ -31,11 +31,11 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: number)
 }
 
 /** Order feedback toasts (CLAUDE.md §10), announced politely to screen readers. */
-export function Toaster() {
+export function Toaster({ aboveTradeBar = false }: { aboveTradeBar?: boolean }) {
   const toasts = useToastStore((s) => s.toasts);
   const dismiss = useToastStore((s) => s.dismiss);
   return (
-    <ol role="status" aria-live="polite" aria-label="Notifications" className="pointer-events-none fixed bottom-4 right-4 left-4 sm:left-auto z-[70] flex flex-col gap-2 sm:w-96 print:hidden">
+    <ol role="status" aria-live="polite" aria-label="Notifications" className={cn('pointer-events-none fixed bottom-4 right-4 left-4 sm:left-auto z-[70] flex flex-col gap-2 sm:w-96 print:hidden', aboveTradeBar && 'max-lg:bottom-[calc(4.75rem+env(safe-area-inset-bottom))]')}>
       {toasts.map((t) => (
         <ToastItem key={t.id} toast={t} onDismiss={dismiss} />
       ))}

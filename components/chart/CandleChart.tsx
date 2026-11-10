@@ -78,6 +78,8 @@ export function CandleChart({ bars, symbol, timeframe, priceDecimals, onHover, m
       crosshair: { mode: CrosshairMode.Normal },
       rightPriceScale: { borderColor: '#1e293b' },
       timeScale: { borderColor: '#1e293b', timeVisible: true, secondsVisible: false, rightOffset: 6 },
+      // Phones: a vertical swipe over the chart scrolls the page; a sideways one still pans the chart.
+      handleScroll: { vertTouchDrag: false },
       // Timestamps are UTC and the chart shows them in UTC; the panel labels the zone.
     });
     const candles = chart.addCandlestickSeries({

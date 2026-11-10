@@ -67,6 +67,11 @@ export function resolveHotkey(e: HotkeyEvent, ctx: HotkeyContext): HotkeyAction 
   }
 }
 
-/** The order-entry intent the trade panel listens for (B / S / Enter). */
+/** The order-entry intent the trade panel listens for (B / S / Enter, and the phone action bar). */
 export const TRADE_INTENT_EVENT = 'qs:trade-intent';
-export type TradeIntentDetail = { intent: 'buy' | 'sell' } | { submit: true };
+export type TradeIntentDetail = { intent: 'buy' | 'sell' } | { submit: true } | { place: 'buy' | 'sell' };
+
+/** Asks the trade panel to place an order of its current size (the phone action bar). */
+export function placeFromTicket(side: 'buy' | 'sell') {
+  window.dispatchEvent(new CustomEvent<TradeIntentDetail>(TRADE_INTENT_EVENT, { detail: { place: side } }));
+}

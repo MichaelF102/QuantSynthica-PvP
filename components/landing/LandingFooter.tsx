@@ -6,7 +6,7 @@ import { APP_NAME, CONTACT_EMAIL } from '@/lib/config';
 import { NAV_LINKS } from '@/lib/landing/content';
 
 const HEAD = 'mb-3 text-[10px] font-mono uppercase tracking-wider text-slate-400';
-const LINK = 'text-sm text-slate-300 hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500/70';
+const LINK = 'touch:inline-block touch:py-2 text-sm text-slate-300 hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500/70';
 
 /** Landing footer: brand, Explore, Legal and Contact columns, then the copyright and disclaimer. */
 export function LandingFooter() {

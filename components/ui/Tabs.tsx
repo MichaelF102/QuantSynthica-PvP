@@ -37,7 +37,7 @@ export function Tabs<T extends string>({ items, value, onChange, label, idPrefix
   };
 
   return (
-    <div className={cn('w-full overflow-x-auto no-scrollbar py-2', className)}>
+    <div className={cn('relative w-full overflow-x-auto no-scrollbar py-2', className)}>
       <div
         role="tablist"
         aria-label={label}
@@ -61,7 +61,7 @@ export function Tabs<T extends string>({ items, value, onChange, label, idPrefix
               tabIndex={selected ? 0 : -1}
               onClick={() => onChange(item.value)}
               className={cn(
-                'flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs transition-colors duration-150',
+                'flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs transition-colors duration-150 touch:min-h-10',
                 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500/70',
                 selected ? ACTIVE : IDLE,
               )}

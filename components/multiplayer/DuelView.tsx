@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ChartPanel } from '@/components/chart/ChartPanel';
 import { PositionsTableView } from '@/components/trade/PositionsTable';
+import { MobileTradeBar } from '@/components/trade/MobileTradeBar';
 import { TradePanelView } from '@/components/trade/TradePanel';
 import { Banner, PanelSkeleton } from '@/components/ui';
 import { Toaster } from '@/components/ui/Toaster';
@@ -107,7 +108,7 @@ export function DuelView({ room, state, placeOrder, onForfeit }: DuelViewProps) 
   const oppPos = opponent && opponent.position !== undefined ? (opponent.position ? `${opponent.position.units > 0 ? 'Long' : 'Short'} ${fmtUnits(Math.abs(opponent.position.units), lotStep)} @ ${fmtPrice(opponent.position.avgEntry, decimals)}` : 'Flat') : undefined;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-lg:pb-20">
       <DuelScoreboard
         symbol={room.symbol.symbol}
         symbolName={room.symbol.name}
@@ -168,7 +169,8 @@ export function DuelView({ room, state, placeOrder, onForfeit }: DuelViewProps) 
         ordersHint={nextOpen ? 'Market orders wait on the server until the next candle opens.' : 'Market orders fill on the server straight away. Stops and targets are on the position.'}
       />
       <DuelAnnouncer snapshot={announce} />
-      <Toaster />
+      <MobileTradeBar />
+      <Toaster aboveTradeBar />
     </div>
   );
 }

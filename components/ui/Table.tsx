@@ -4,7 +4,9 @@ import { cn } from '@/lib/utils';
 /** Data table recipe from DESIGN.md §7.7. Scrolls inside its own container, never the page. */
 export function Table({ children, className, caption }: { children: ReactNode; className?: string; caption?: string }) {
   return (
-    <div className="w-full overflow-x-auto">
+    // `relative`: absolutely placed children (sr-only labels) stay inside the scroll box instead of
+    // widening the page on phones.
+    <div className="relative w-full overflow-x-auto">
       <table className={cn('w-full text-left border-collapse text-xs', className)}>
         {caption && <caption className="sr-only">{caption}</caption>}
         {children}

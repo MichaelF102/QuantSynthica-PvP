@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils';
 export type ButtonVariant = 'primary' | 'secondary' | 'text' | 'icon' | 'buy' | 'sell';
 
 const FOCUS = 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500/70';
+// Phones and tablets get finger-sized targets; desktop keeps DESIGN.md's sizes.
+const TOUCH: Partial<Record<ButtonVariant, string>> = { primary: 'touch:min-h-10', secondary: 'touch:min-h-10', buy: 'touch:min-h-10', sell: 'touch:min-h-10', icon: 'touch:min-h-10 touch:min-w-10' };
 
 // Class strings from DESIGN.md §7.5 and CLAUDE.md §6 (buy/sell tints).
 const VARIANTS: Record<ButtonVariant, string> = {
@@ -29,6 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       type={type}
       className={cn(
         VARIANTS[variant],
+        TOUCH[variant],
         'transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
         FOCUS,
         className,
@@ -40,5 +43,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
 
 /** Same classes for links styled as buttons. */
 export function buttonClasses(variant: ButtonVariant = 'primary', className?: string): string {
-  return cn(VARIANTS[variant], 'transition-colors duration-150', FOCUS, className);
+  return cn(VARIANTS[variant], TOUCH[variant], 'transition-colors duration-150', FOCUS, className);
 }

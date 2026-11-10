@@ -5,6 +5,7 @@ import { ChartPanel } from '@/components/chart/ChartPanel';
 import { RulesCard } from '@/components/setup/RulesCard';
 import { ChallengeModal } from '@/components/setup/ChallengeModal';
 import { SetupModal } from '@/components/setup/SetupModal';
+import { MobileTradeBar } from '@/components/trade/MobileTradeBar';
 import { PositionsTable } from '@/components/trade/PositionsTable';
 import { TradePanel } from '@/components/trade/TradePanel';
 import { Banner, PanelSkeleton } from '@/components/ui';
@@ -24,6 +25,7 @@ import { useHotkeys } from '@/store/useHotkeys';
 import { useReplayLoop } from '@/store/useReplayLoop';
 import { MatchEndDialog } from './MatchEndDialog';
 import { MatchHeader } from './MatchHeader';
+import { MobilePlayButton } from './MobilePlayButton';
 import { ReplayControls } from './ReplayControls';
 import { ShortcutsDialog } from './ShortcutsDialog';
 
@@ -148,7 +150,8 @@ export function MatchView() {
   }
 
   return (
-    <div className="space-y-4">
+    // Bottom padding below lg keeps the last panel clear of the phone action bar.
+    <div className="space-y-4 max-lg:pb-20">
       {limitedData && <Banner kind="warning">Limited data for this symbol: the session may end before the timer.</Banner>}
       {drawdownWarned && match.status !== 'ended' && warningClosedFor !== matchId && (
         <Banner kind="warning" onDismiss={() => setWarningClosedFor(matchId)}>
@@ -192,7 +195,8 @@ export function MatchView() {
       {match.status === 'idle' && <RulesCard config={match.config} startTime={currentCandle(match).time} limitedData={limitedData} onGo={play} />}
       <MatchEndDialog />
       <ShortcutsDialog open={helpOpen} onClose={() => setHelpOpen(false)} />
-      <Toaster />
+      <MobileTradeBar leading={<MobilePlayButton />} />
+      <Toaster aboveTradeBar />
     </div>
   );
 }

@@ -47,7 +47,8 @@ export function SetupModal({ index, last, busy, error, onRetry, onStart }: Setup
           </Banner>
         )}
 
-        <div className="flex items-center justify-between gap-2 pt-1">
+        {/* Stays in view at the bottom of the scrolling dialog, so Start is always one tap away on a phone. */}
+        <div className="sticky bottom-0 -mx-5 -mb-5 px-5 py-3 border-t border-slate-800 bg-[#0b1222] flex items-center justify-between gap-2">
           <Link href="/" className={buttonClasses('secondary')}>
             Back home
           </Link>

@@ -4,6 +4,8 @@ module.exports = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './lib/**/*.{ts,tsx}', './store/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      // `touch:` = phones and tablets (a coarse pointer), for finger-sized targets only there.
+      screens: { touch: { raw: '(pointer: coarse)' } },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
