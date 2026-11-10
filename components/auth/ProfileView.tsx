@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useId, useState, type FormEvent } from 'react';
-import { CloudOff, LogIn, LogOut, RefreshCw, Trash2, UserRound } from 'lucide-react';
+import { CloudOff, LogOut, RefreshCw, Trash2, UserRound } from 'lucide-react';
 import { Banner, Button, EmptyState, Panel, PanelSkeleton } from '@/components/ui';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { fmtPlayedAt } from '@/lib/format';
@@ -9,10 +9,12 @@ import { loadNickname, saveNickname } from '@/lib/multiplayer/client';
 import { NICKNAME_MAX, cleanNickname } from '@/lib/multiplayer/protocol';
 import { useAuth } from '@/store/authStore';
 import { Avatar } from './Avatar';
+import { SignInForm } from './SignInForm';
+import { VerifyEmailBanner } from './VerifyEmailBanner';
 
 /** Plan M14 A8: the signed-in player's account, sync status and account controls. */
 export function ProfileView() {
-  const { status, user, sync, error, signIn, signOut, syncNow, deleteAccount } = useAuth((s) => s);
+  const { status, user, sync, error, signOut, syncNow, deleteAccount } = useAuth((s) => s);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
@@ -27,16 +29,14 @@ export function ProfileView() {
   if (status === 'signed_out' || !user) {
     return (
       <Panel title="Account" icon={UserRound}>
-        <div className="space-y-4 py-2">
+        <div className="space-y-4 py-2 max-w-sm">
           {deleted && <Banner kind="info">Your account and cloud data were deleted. This browser keeps its copy.</Banner>}
-          {error && <Banner kind="error">{error}</Banner>}
           <p className="text-xs text-slate-300 max-w-prose">
-            Sign in to keep your practice results, 1v1 results and profile on every device. It is free. Without an account everything still works, saved in this browser only.
+            Sign in to keep your practice results, 1v1 results and profile on every device. One free account works on every QuantSynthica site. Without an account everything still works, saved in
+            this browser only.
           </p>
-          <Button onClick={() => void signIn()} className="px-5 py-2.5">
-            <LogIn className="w-3.5 h-3.5" aria-hidden /> Sign in with Google
-          </Button>
-          <p className="text-[11px] text-faint max-w-prose">We keep your results, your 1v1 name and your last match setup. Your Google name and photo are shown on this page. Nothing is shared with other players.</p>
+          <SignInForm />
+          <p className="text-[11px] text-faint max-w-prose">We keep your results, your 1v1 name and your last match setup. Your name and photo are shown on this page. Nothing is shared with other players.</p>
         </div>
       </Panel>
     );
@@ -48,13 +48,14 @@ export function ProfileView() {
   return (
     <div className="space-y-4">
       {error && <Banner kind="error">{error}</Banner>}
+      {!user.emailVerified && <VerifyEmailBanner email={user.email} />}
       <Panel title="Account" icon={UserRound}>
         <div className="flex flex-wrap items-center gap-4">
-          <Avatar name={user.name} photoURL={user.photoURL} size={56} />
+          <Avatar name={user.name ?? user.email} photoURL={user.photoURL} size={56} />
           <div className="min-w-0">
-            <p className="text-sm font-bold text-white truncate">{user.name ?? 'Signed in'}</p>
-            {user.email && <p className="text-[11px] text-slate-400 truncate">{user.email}</p>}
-            <p className="text-[11px] text-faint">Signed in with Google</p>
+            <p className="text-sm font-bold text-white truncate">{user.name ?? user.email ?? 'Signed in'}</p>
+            {user.email && user.name && <p className="text-[11px] text-slate-400 truncate">{user.email}</p>}
+            <p className="text-[11px] text-faint">Signed in with {user.provider === 'google' ? 'Google' : 'email and password'} · works on every QuantSynthica site</p>
           </div>
           <Button variant="secondary" className="sm:ml-auto" onClick={() => void signOut()}>
             <LogOut className="w-3.5 h-3.5" aria-hidden /> Sign out
@@ -92,7 +93,10 @@ export function ProfileView() {
 
       <Panel title="Delete account" description="Removes your cloud data and your sign-in">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-[11px] text-slate-400 max-w-prose">All results and your profile are deleted from the cloud and the account is removed. This browser keeps its own copy, which you can clear on the History page.</p>
+          <p className="text-[11px] text-slate-400 max-w-prose">
+            The account is shared by every QuantSynthica site. Deleting it removes your cloud data on all of them and the sign-in itself. This browser keeps its own copy of your results, which you can
+            clear on the History page.
+          </p>
           <Button variant="secondary" className="text-rose-300 hover:text-rose-200 hover:border-rose-500/50" onClick={() => setConfirmDelete(true)}>
             <Trash2 className="w-3.5 h-3.5" aria-hidden /> Delete account
           </Button>
@@ -109,7 +113,7 @@ export function ProfileView() {
           if (await deleteAccount()) setDeleted(true);
         }}
       >
-        Your cloud results and profile are deleted and you are signed out. Google may ask you to confirm. This cannot be undone.
+        Your cloud data on every QuantSynthica site is deleted and you are signed out everywhere. Google may ask you to confirm. This cannot be undone.
       </ConfirmDialog>
     </div>
   );

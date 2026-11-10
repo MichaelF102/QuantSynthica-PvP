@@ -1,22 +1,40 @@
 rules_version = '2';
 
-// Plan M14 A3: a signed-in user can read and write only their own documents. The web config in
-// NEXT_PUBLIC_FIREBASE_* is public by design; these rules are what protect the data.
-// Paste into Firebase console -> Firestore -> Rules, or deploy with the Firebase CLI.
+// One Firebase project for every QuantSynthica site (plan M16). This file is the only copy of the
+// rules: paste it into Firebase console -> Firestore -> Rules (or deploy it with the Firebase CLI)
+// whenever it changes. A signed-in user can read and write only their own documents. The web
+// config in NEXT_PUBLIC_FIREBASE_* is public by design; these rules are what protect the data.
+//
+// Layout:
+//   users/{uid}                          shared profile (name, photo) + the trading game's fields
+//   users/{uid}/results|duels/{id}       trading game (QuantSynthica PvP, plan M14)
+//   users/{uid}/apps/{app}               one settings document per site
+//   users/{uid}/apps/{app}/items/{id}    that site's saved things (screens, watchlists, notes, ...)
 service cloud.firestore {
   match /databases/{database}/documents {
     function isOwner(uid) {
       return request.auth != null && request.auth.uid == uid;
     }
 
+    // Writes need a verified email: Google accounts always are, email/password accounts after
+    // the link in the verification email. Sites match accounts by email, so an unverified
+    // address must not own data. Reads and deletes stay open to the owner.
+    function canWrite(uid) {
+      return isOwner(uid) && request.auth.token.email_verified == true;
+    }
+
     function optionalString(data, key, max) {
       return !(key in data) || (data[key] is string && data[key].size() <= max);
     }
 
-    // Profile: nickname, last setup, Google name and photo. No email.
+    function knownApp(app) {
+      return app in ['fundamentals', 'mf', 'swing', 'terminal', 'lab'];
+    }
+
+    // Profile: shared name and photo, plus the trading game's nickname and last setup. No email.
     match /users/{uid} {
       allow read, delete: if isOwner(uid);
-      allow create, update: if isOwner(uid)
+      allow create, update: if canWrite(uid)
         && request.resource.data.keys().hasOnly(['nickname', 'lastSetup', 'displayName', 'photoURL', 'updatedAt'])
         && optionalString(request.resource.data, 'nickname', 20)
         && optionalString(request.resource.data, 'lastSetup', 4000)
@@ -24,10 +42,10 @@ service cloud.firestore {
         && optionalString(request.resource.data, 'photoURL', 1000)
         && (!('updatedAt' in request.resource.data) || request.resource.data.updatedAt is number);
 
-      // One saved practice result or 1v1 result, kept as JSON in `data`.
+      // Trading game: one saved practice result or 1v1 result, kept as JSON in `data`.
       match /{kind}/{id} {
         allow read, delete: if isOwner(uid) && kind in ['results', 'duels'];
-        allow create, update: if isOwner(uid)
+        allow create, update: if canWrite(uid)
           && kind in ['results', 'duels']
           && id.matches('^[A-Za-z0-9_-]{1,150}$')
           && request.resource.data.keys().hasOnly(['id', 'playedAt', 'v', 'data'])
@@ -36,6 +54,31 @@ service cloud.firestore {
           && request.resource.data.v == 1
           && request.resource.data.data is string
           && request.resource.data.data.size() <= 500000;
+      }
+
+      // Other sites: one settings document each, as JSON in `data`.
+      match /apps/{app} {
+        allow read, delete: if isOwner(uid) && knownApp(app);
+        allow create, update: if canWrite(uid) && knownApp(app)
+          && request.resource.data.keys().hasOnly(['data', 'updatedAt'])
+          && request.resource.data.data is string
+          && request.resource.data.data.size() <= 100000
+          && request.resource.data.updatedAt is number;
+
+        // One saved thing each. `kind` says what it is inside that site (e.g. "screen").
+        match /items/{id} {
+          allow read, delete: if isOwner(uid) && knownApp(app);
+          allow create, update: if canWrite(uid) && knownApp(app)
+            && id.matches('^[A-Za-z0-9_.-]{1,150}$')
+            && request.resource.data.keys().hasOnly(['id', 'kind', 'updatedAt', 'v', 'data'])
+            && request.resource.data.id == id
+            && request.resource.data.kind is string
+            && request.resource.data.kind.size() <= 40
+            && request.resource.data.updatedAt is number
+            && request.resource.data.v is int
+            && request.resource.data.data is string
+            && request.resource.data.data.size() <= 500000;
+        }
       }
     }
   }

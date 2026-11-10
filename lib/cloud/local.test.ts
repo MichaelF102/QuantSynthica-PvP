@@ -86,4 +86,13 @@ describe('error text', () => {
     expect(syncErrorText({ code: 'unavailable' })).toMatch(/Offline/);
     expect(syncErrorText({ code: 'resource-exhausted' })).toMatch(/quota/);
   });
+
+  it('explains email and password failures without saying which part was wrong (plan M16)', () => {
+    expect(authErrorText({ code: 'auth/invalid-credential' })).toBe('The email or password is wrong.');
+    expect(authErrorText({ code: 'auth/user-not-found' })).toBe('The email or password is wrong.');
+    expect(authErrorText({ code: 'auth/email-already-in-use' })).toMatch(/already exists/);
+    expect(authErrorText({ code: 'auth/too-many-requests' })).toMatch(/Too many attempts/);
+    expect(authErrorText({ code: 'auth/operation-not-allowed' })).toMatch(/not turned on/);
+    expect(authErrorText({ code: 'auth/requires-recent-login' })).toMatch(/sign in again/);
+  });
 });

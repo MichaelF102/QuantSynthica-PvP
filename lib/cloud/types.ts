@@ -25,4 +25,13 @@ export interface CloudStore {
   removeAll(): Promise<void>;
 }
 
-export type CloudUser = { uid: string; name: string | null; email: string | null; photoURL: string | null };
+export type CloudUser = {
+  uid: string;
+  name: string | null;
+  email: string | null;
+  photoURL: string | null;
+  /** How the account signs in (plan M16). Google wins when both are linked. */
+  provider: 'google' | 'password';
+  /** Google accounts always are; email/password accounts after the link in the email. */
+  emailVerified: boolean;
+};

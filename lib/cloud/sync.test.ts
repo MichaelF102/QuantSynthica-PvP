@@ -8,7 +8,7 @@ import type { CloudDoc, CloudProfile, CloudStore, CloudUser } from './types';
 
 type I = { id: string; playedAt: number; note?: string; noteUpdatedAt?: number };
 const item = (id: string, playedAt: number, extra: Partial<I> = {}): I => ({ id, playedAt, ...extra });
-const USER: CloudUser = { uid: 'u1', name: 'Ann Example', email: 'ann@example.com', photoURL: 'https://example.com/a.png' };
+const USER: CloudUser = { uid: 'u1', name: 'Ann Example', email: 'ann@example.com', photoURL: 'https://example.com/a.png', provider: 'google', emailVerified: true };
 
 function fakeCloud(seed: Partial<Record<SyncKind, I[]>> = {}, profile: CloudProfile | null = null) {
   const docs: Record<SyncKind, Map<string, CloudDoc>> = {

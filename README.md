@@ -12,7 +12,8 @@ against a clock and a loss limit, then get a full results report. Practice only:
 - **1v1 rooms:** two players join by a 6-character code and trade the same session on one shared
   clock. Single game or best of 3; opponent positions hidden or visible.
 - **Challenge links:** send a friend the exact session you played and the score to beat.
-- **Accounts (optional):** Google sign-in keeps your progress on every device. Without it,
+- **Accounts (optional):** Google or email sign-in keeps your progress on every device, with one
+  account for every QuantSynthica site. Without it,
   everything is saved in the browser.
 
 Everything below runs on free plans: Vercel or Render for the app, Firebase for sign-in,
@@ -81,14 +82,19 @@ Vercel and Render deploy from a GitHub repo, and every push to `main` redeploys.
 3. Note the URL, e.g. `https://quantsynthica-pvp.onrender.com`. Free services sleep after about
    15 idle minutes, and the next visit takes 30–60 s to wake.
 
-### 3. Firebase: Google sign-in (optional)
+### 3. Firebase: sign-in (optional)
+
+One Firebase project (`quantsynthica`) serves every QuantSynthica site, so the same Google or
+email/password account and its data work on all of them. [`firestore.rules`](firestore.rules) in
+this repo is the only rules file for that project: other sites add their app id there.
 
 1. [console.firebase.google.com](https://console.firebase.google.com) → **Add project**
    (Analytics not needed). It starts on the free Spark plan.
-2. **Build → Authentication → Get started → Sign-in method → Google → Enable**, choose a support
-   email, save.
-3. **Authentication → Settings → Authorized domains → Add domain:** your app's host without
-   `https://` (e.g. `quantsynthica-pvp.vercel.app`, `quantsynthica-pvp.onrender.com`).
+2. **Build → Authentication → Get started → Sign-in method:** enable **Google** (choose a support
+   email) and **Email/Password** (leave "Email link" off). Save each.
+3. **Authentication → Settings → Authorized domains → Add domain:** every site's host without
+   `https://` (e.g. `quantsynthica-pvp.vercel.app`, `quantsynthica-pvp.onrender.com`, and the
+   other QuantSynthica sites).
    `localhost` is already there. Sign-in is refused on any address not listed, including Vercel
    preview URLs.
 4. **Build → Firestore Database → Create database** → production mode → a nearby location.
@@ -102,7 +108,8 @@ Vercel and Render deploy from a GitHub repo, and every push to `main` redeploys.
    and/or Render (**Environment**), then **redeploy**.
 
 These four values are public by design (every browser gets them). The Firestore rules protect the
-data. Free limits are 50k document reads and 20k writes a day and 1 GiB of storage. A sign-in
+data. Email/password accounts must open the verification email before anything syncs (the rules
+require a verified email). Free limits, shared by every site on the project, are 50k document reads and 20k writes a day and 1 GiB of storage. A sign-in
 reads at most about 100 documents and each saved match writes one. If the daily quota runs out,
 progress keeps saving in the browser and syncs the next day.
 

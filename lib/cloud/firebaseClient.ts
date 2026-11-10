@@ -1,12 +1,29 @@
 import { getApps, initializeApp } from 'firebase/app';
-import { GoogleAuthProvider, deleteUser, getAuth, onAuthStateChanged, reauthenticateWithPopup, signInWithPopup, signInWithRedirect, signOut, type User } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  deleteUser,
+  getAuth,
+  onAuthStateChanged,
+  reauthenticateWithPopup,
+  reload,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut,
+  updateProfile,
+  type User,
+} from 'firebase/auth';
 import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, setDoc, writeBatch, type Firestore } from 'firebase/firestore';
 import type { SyncKind } from '../localChanges';
+import { OTHER_APPS } from './apps';
 import type { FirebaseWebConfig } from './config';
 import type { CloudDoc, CloudProfile, CloudStore, CloudUser } from './types';
 
-// The only module that touches the Firebase SDK (plan M14). It is loaded with a dynamic import,
-// so visitors on a site without a Firebase config never download it.
+// The only module that touches the Firebase SDK (plans M14, M16). It is loaded with a dynamic
+// import, so visitors on a site without a Firebase config never download it.
 
 const COLLECTION: Record<SyncKind, string> = { result: 'results', duel: 'duels' };
 const BATCH = 400; // Firestore allows 500 writes per batch
@@ -14,13 +31,27 @@ const BATCH = 400; // Firestore allows 500 writes per batch
 export type AuthApi = {
   onChange(cb: (user: CloudUser | null) => void): () => void;
   signIn(): Promise<void>;
+  signInEmail(email: string, password: string): Promise<void>;
+  /** Creates the account, sets its name and sends the verification email. */
+  signUpEmail(name: string, email: string, password: string): Promise<void>;
+  resetPassword(email: string): Promise<void>;
+  resendVerification(): Promise<void>;
+  /** Reloads the account (after the email link was clicked) and returns it fresh. */
+  refreshUser(): Promise<CloudUser | null>;
   signOut(): Promise<void>;
   /** Removes the Firebase account, asking Google again if the sign-in is old. */
   deleteAccount(): Promise<void>;
   store(uid: string): CloudStore;
 };
 
-const toUser = (u: User): CloudUser => ({ uid: u.uid, name: u.displayName, email: u.email, photoURL: u.photoURL });
+export const toUser = (u: User): CloudUser => ({
+  uid: u.uid,
+  name: u.displayName,
+  email: u.email,
+  photoURL: u.photoURL,
+  provider: u.providerData.some((p) => p.providerId === 'google.com') ? 'google' : 'password',
+  emailVerified: u.emailVerified,
+});
 
 function firestoreStore(db: Firestore, uid: string): CloudStore {
   const col = (kind: SyncKind) => collection(db, 'users', uid, COLLECTION[kind]);
@@ -30,6 +61,14 @@ function firestoreStore(db: Firestore, uid: string): CloudStore {
       ids.slice(i, i + BATCH).forEach((id) => op(batch, id));
       await batch.commit();
     }
+  };
+  const clear = async (path: string[]) => {
+    const c = collection(db, path.join('/'));
+    const snap = await getDocs(c);
+    await inBatches(
+      snap.docs.map((d) => d.id),
+      (b, id) => b.delete(doc(c, id)),
+    );
   };
   return {
     async list(kind) {
@@ -51,12 +90,11 @@ function firestoreStore(db: Firestore, uid: string): CloudStore {
       await setDoc(doc(db, 'users', uid), profile);
     },
     async removeAll() {
-      for (const kind of Object.keys(COLLECTION) as SyncKind[]) {
-        const snap = await getDocs(col(kind));
-        await inBatches(
-          snap.docs.map((d) => d.id),
-          (b, id) => b.delete(doc(col(kind), id)),
-        );
+      // The account is shared by every QuantSynthica site, so deleting it clears theirs too.
+      for (const kind of Object.keys(COLLECTION) as SyncKind[]) await clear(['users', uid, COLLECTION[kind]]);
+      for (const app of OTHER_APPS) {
+        await clear(['users', uid, 'apps', app, 'items']);
+        await deleteDoc(doc(db, 'users', uid, 'apps', app));
       }
       await deleteDoc(doc(db, 'users', uid));
     },
@@ -81,6 +119,26 @@ export function createAuthApi(config: FirebaseWebConfig): AuthApi {
         else throw e;
       }
     },
+    async signInEmail(email, password) {
+      await signInWithEmailAndPassword(auth, email.trim(), password);
+    },
+    async signUpEmail(name, email, password) {
+      const { user } = await createUserWithEmailAndPassword(auth, email.trim(), password);
+      if (name.trim()) await updateProfile(user, { displayName: name.trim() });
+      await sendEmailVerification(user);
+    },
+    resetPassword: (email) => sendPasswordResetEmail(auth, email.trim()),
+    async resendVerification() {
+      if (auth.currentUser) await sendEmailVerification(auth.currentUser);
+    },
+    async refreshUser() {
+      const u = auth.currentUser;
+      if (!u) return null;
+      await reload(u);
+      // A fresh token carries email_verified, which the Firestore rules check.
+      await u.getIdToken(true);
+      return toUser(u);
+    },
     signOut: () => signOut(auth),
     async deleteAccount() {
       const u = auth.currentUser;
@@ -88,7 +146,8 @@ export function createAuthApi(config: FirebaseWebConfig): AuthApi {
       try {
         await deleteUser(u);
       } catch (e) {
-        if ((e as { code?: string }).code !== 'auth/requires-recent-login') throw e;
+        // Email/password accounts get "sign in again" from authErrorText instead of a prompt here.
+        if ((e as { code?: string }).code !== 'auth/requires-recent-login' || toUser(u).provider !== 'google') throw e;
         await reauthenticateWithPopup(u, provider);
         await deleteUser(u);
       }

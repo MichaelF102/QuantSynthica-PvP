@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Profile' };
 export default function ProfilePage() {
   return (
     <AppShell>
-      <PageHeader title="Your" highlight="profile" description="Sign in with Google to keep your progress on every device." />
+      <PageHeader title="Your" highlight="profile" description="Sign in with Google or email to keep your progress on every device." />
       <ProfileView />
     </AppShell>
   );
